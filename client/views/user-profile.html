@@ -1,0 +1,44 @@
+<div ng-controller='TestController' nv-file-drop uploader="uploader">
+  <article>
+  <h2 ng-model='currentUser'>{{id}}</h2>
+  <h2 style="font-family:  'gabriola', sans-serif;">Your photo:</h2>
+  <img id='image' class="avatar" src="{{currentUser.image}}"> </img>
+  </article>
+  <div>
+
+    <div class="row">
+    <div><br>
+                <table class="table" style="border: 0px solid white;">
+                    
+                    <tbody>
+                        <tr ng-repeat="item in uploader.queue">
+                            <td ng-hide="item.isReady || item.isUploading || item.isSuccess">
+                                <button type="button" class="btn btn-success btn-xl"
+                                        ng-click="item.upload()"
+                                        
+                                        >
+                                    <span class="glyphicon glyphicon-upload"></span>
+                                    Upload
+                            </td>
+
+                        <div ng-controller="FilesController" data-ng-init="load()">
+                        </div>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div><br>
+            <h2 style="font-family:  'gabriola', sans-serif; margin-top:-40px;">Select new photo from file:</h2>
+            <label for="uploadbtn" class="uploadButton">Select file</label>
+                <input input style="opacity: 0; z-index: -1;" 
+                nv-file-select uploader="uploader" type="file" name="upload" id="uploadbtn"
+                
+                />
+            </div>
+
+            
+    </div>
+  </div>
+
+</div>

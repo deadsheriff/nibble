@@ -1,0 +1,22 @@
+{
+  "name": "Reviewer",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "image": {
+      "type": "string",
+      "required": true,
+      "default": "../storage/Reviewers/empty.jpg"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reviews": {
+      "type": "hasMany",
+      "model": "Review",
+      "foreignKey": "publisherId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
